@@ -1,0 +1,22 @@
+{
+  "name": "mqtt-listener",
+  "version": "1.0.0",
+  "description": "mqtt-listener",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Geylian/mqtt-listener.git"
+  },
+  "author": "Geylian Lingier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Geylian/mqtt-listener/issues"
+  },
+  "homepage": "https://github.com/Geylian/mqtt-listener#readme",
+  "dependencies": {
+    "mqtt": "^3.0.0"
+  }
+}
