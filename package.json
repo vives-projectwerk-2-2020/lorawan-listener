@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Geylian/mqtt-listener#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
+    "influxdb-nodejs": "^3.1.0",
     "mqtt": "^3.0.0"
   }
 }
