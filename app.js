@@ -1,7 +1,8 @@
 let ttn = require("ttn")
 
-const appID = "appid"
-const accessKey = "accessKey"
+require('dotenv').config()
+const appID = process.env.APP_ID
+const accessKey = process.env.ACCESSKEY
 
 // discover handler and open mqtt connection
 ttn.data(appID, accessKey)
