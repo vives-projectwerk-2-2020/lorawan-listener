@@ -11,6 +11,9 @@ add .env file with following data :
 ```.env
 APP_ID=Type_Here_The_Device_ID
 ACCESSKEY=Type_Here_The_Access_Key
+REAL_TIME_IP=Type_Here_The_IP_Address_From_The_Broker
+INFLUX_IP=Type_Here_The_InfluxDB_IP
+INFLUX_PORT=Type_Here_The_InfluxDB_PORT
 ```
 ## Information
 The Things Network mqtt API reference : 
@@ -20,7 +23,9 @@ Topic : `<AppID>/devices/<DevID>/up`
 
 ## Libraries
 
-[The Things Network via mqtt lib](https://www.npmjs.com/package/ttn)
+- [The Things Network via mqtt lib](https://www.npmjs.com/package/ttn)
+- [mqtt lib](https://www.npmjs.com/package/mqtt)
+
 
 ## Received Data Example 
 Simulated data:
@@ -35,7 +40,7 @@ Simulated data:
   metadata: { time: '2020-02-13T15:04:43.34724278Z' }
 }
 ```
-Data from LoRaWAN antenna 
+Data from LoRaWAN antenna :
 
 ```json
 Received uplink from  lora-rfm95w-maximva
