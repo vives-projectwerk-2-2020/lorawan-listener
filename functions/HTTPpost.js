@@ -2,27 +2,22 @@ const Influx = require('influx')
 
 // Connect to a single host with a full set of config details and
 // a custom schema
-const client = new Influx.InfluxDB({
-  database: 'my_db',
-  host: 'localhost',
-  port: 8086,
-  username: 'connor',
-  password: 'pa$$w0rd',
-  schema: [
+const influx = new Influx.InfluxDB('http://192.168.99.100:8086/database')
+
+influx.writePoints([
     {
       measurement: 'sensors',
-      fields: {
+      tags: {
         sensor_id: "sensor_01",
-        location: "sensor_01",
-        memory_usage: Influx.FieldType.INTEGER,
-        cpu_usage: Influx.FieldType.FLOAT,
-        is_online: Influx.FieldType.BOOLEAN
-      }
-      tags: [
-        'hostname'
-      ]
+        location: "lab2.80",
+      },
+      fields: { temp: 21.5 },
+      timestamp: 1581880128,
     }
-  ]
-})
-
-sensors,sensor_id="sensor_01",location="lab2.80" temp=21.5 1581880118
+  ], {
+    database: 'particula',
+    precision: 's',
+  })
+  .catch(error => {
+    console.error(`Error saving data to InfluxDB! ${err.stack}`)
+  });
