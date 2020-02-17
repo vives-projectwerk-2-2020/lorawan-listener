@@ -1,14 +1,14 @@
 #
 FROM node:13.7
 
-WORKDIR /src
+WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install 
+RUN npm install
 
 COPY . .
 
 EXPOSE 5000
 
-CMD [node ./src/app.js]
+CMD ["npm", "run", "start"]
