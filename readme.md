@@ -23,6 +23,7 @@ Topic : `<AppID>/devices/<DevID>/up`
 [The Things Network via mqtt lib](https://www.npmjs.com/package/ttn)
 
 ## Received Data Example 
+Simulated data:
 ```json
 {
   app_id: 'geylianloraproject',
@@ -32,6 +33,28 @@ Topic : `<AppID>/devices/<DevID>/up`
   counter: 0,
   payload_raw: <Buffer 00 11 22 33 44 55 66>,
   metadata: { time: '2020-02-13T15:04:43.34724278Z' }
+}
+```
+Data from LoRaWAN antenna 
+
+```json
+Received uplink from  lora-rfm95w-maximva
+{
+  app_id: 'maximva-loratest',
+  dev_id: 'lora-rfm95w-maximva',
+  hardware_serial: '00A13584F9D5E9D4',
+  port: 1,
+  counter: 22,
+  payload_raw: <Buffer 9e>,
+  metadata: {
+    time: '2020-02-14T07:35:15.207401717Z',
+    frequency: 867.1,
+    modulation: 'LORA',
+    data_rate: 'SF7BW125',
+    airtime: 46336000,
+    coding_rate: '4/5',
+    gateways: [ [Object], [Object] ]
+  }
 }
 ```
 
