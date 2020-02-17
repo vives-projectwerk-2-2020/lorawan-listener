@@ -44,14 +44,22 @@ Received uplink from  lora-rfm95w-maximva
   dev_id: 'lora-rfm95w-maximva',
   hardware_serial: '00A13584F9D5E9D4',
   port: 1,
-  counter: 22,
-  payload_raw: <Buffer 9e>,
+  counter: 9,
+  payload_raw: <Buffer 01 00 09 00 f6 00 6d 00 67 00 91 00>,
+  payload_fields: {
+    device_id: 1,
+    humidity: 246,
+    pm10: 145,
+    pm25: 103,
+    pressure: 109,
+    temperature: 9
+  },
   metadata: {
-    time: '2020-02-14T07:35:15.207401717Z',
-    frequency: 867.1,
+    time: '2020-02-17T08:06:04.784265573Z',
+    frequency: 868.3,
     modulation: 'LORA',
     data_rate: 'SF7BW125',
-    airtime: 46336000,
+    airtime: 61696000,
     coding_rate: '4/5',
     gateways: [ [Object], [Object] ]
   }
