@@ -7,6 +7,7 @@ const appID = process.env.APP_ID;
 const accessKey = process.env.ACCESSKEY;
 const influxIp = process.env.INFLUX_IP;
 const influxPort = process.env.INFLUX_PORT;
+const database = process.env.INFLUX_DB_NAME;
 
 const influx = new Influx.InfluxDB(`http://${influxIp}:${influxPort}/database`);
 
@@ -32,7 +33,7 @@ ttn.data(appID, accessKey)
           timestamp: Math.round((new Date()).getTime() / 1000),
         }
       ], {
-        database: 'particulaInfluxDB',
+        database: `${database}`,
         precision: 's',
       })
       .catch(error => {
