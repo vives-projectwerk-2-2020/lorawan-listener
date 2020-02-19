@@ -10,6 +10,8 @@ const influxPort = process.env.INFLUX_PORT;
 const database = process.env.INFLUX_DB_NAME;
 
 const influx = new Influx.InfluxDB(`http://${influxIp}:${influxPort}/database`);
+console.log("timestamp server: " + Math.round((new Date()).getTime() / 1000))
+console.log("local timestamp : " + (Math.round((new Date()).getTime() / 1000)+3600))
 
 // discover handler and open mqtt connection
 ttn.data(appID, accessKey)
@@ -30,7 +32,7 @@ ttn.data(appID, accessKey)
             pm10: payload.payload_fields.pm10,
             pm25: payload.payload_fields.pm25
            },
-          timestamp: Math.round((new Date()).getTime() / 1000),
+          timestamp: (Math.round((new Date()).getTime() / 1000)+3600),
         }
       ], {
         database: `${database}`,
