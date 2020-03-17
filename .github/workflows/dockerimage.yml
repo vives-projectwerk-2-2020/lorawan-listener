@@ -43,7 +43,7 @@ jobs:
         docker push $IMAGE_ID:$VERSION
   deploy:
     name: deploy
-    needs: [push]
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
     - name: executing remote ssh commands using password
