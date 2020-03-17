@@ -57,4 +57,3 @@ jobs:
           cd ${{ secrets.PATH }}
           docker-compose pull
           docker-compose up -d lorawan
-
