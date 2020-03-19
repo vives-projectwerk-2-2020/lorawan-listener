@@ -12,6 +12,7 @@ const database = process.env.INFLUX_DB_NAME;
 
 const influx = new Influx.InfluxDB(`http://${influxIp}:${influxPort}/database`);
 console.log("timestamp server: " + Math.round((new Date()).getTime() / 1000))
+console.log("local timestamp : " + (Math.round((new Date()).getTime() / 1000)+ (timezone *3600)))
 
 // discover handler and open mqtt connection
 ttn.data(appID, accessKey)
@@ -24,11 +25,11 @@ ttn.data(appID, accessKey)
         {
           measurement: 'sensors',
           tags: {
-            sensor_id: devID,
-            location: "lab2.80",
+            sensor_id: payload.payload_fields.device_id
           },
           fields: { temperature: payload.payload_fields.temperature,
             humidity: payload.payload_fields.humidity,
+            pressure: payload.payload_fields.pressure,
             pm10: payload.payload_fields.pm10,
             pm25: payload.payload_fields.pm25
            },
