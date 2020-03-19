@@ -33,7 +33,7 @@ ttn.data(appID, accessKey)
             pm10: payload.payload_fields.pm10,
             pm25: payload.payload_fields.pm25
            },
-          timestamp: (Math.round((new Date()).getTime() / 1000)+3600),
+          timestamp: payload.time
         }
       ], {
         database: `${database}`,
