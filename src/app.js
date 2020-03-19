@@ -25,7 +25,7 @@ ttn.data(appID, accessKey)
         {
           measurement: 'sensors',
           tags: {
-            sensor_id: payload.payload_fields.device_id
+            sensor_id: payload.dev_id
           },
           fields: { temperature: payload.payload_fields.temperature,
             humidity: payload.payload_fields.humidity,
