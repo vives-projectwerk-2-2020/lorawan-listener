@@ -1,5 +1,6 @@
 const ttn = require("ttn");
 const Influx = require('influx');
+const timezone = 1; //  = +1h
 
 require('dotenv').config();
 
@@ -11,7 +12,6 @@ const database = process.env.INFLUX_DB_NAME;
 
 const influx = new Influx.InfluxDB(`http://${influxIp}:${influxPort}/database`);
 console.log("timestamp server: " + Math.round((new Date()).getTime() / 1000))
-console.log("local timestamp : " + (Math.round((new Date()).getTime() / 1000)+3600))
 
 // discover handler and open mqtt connection
 ttn.data(appID, accessKey)
@@ -46,5 +46,4 @@ ttn.data(appID, accessKey)
   })
   .catch(function (err) {
     console.error(`Error communication The Things Network API! ${err}`);
-    process.exit(1);
   })
