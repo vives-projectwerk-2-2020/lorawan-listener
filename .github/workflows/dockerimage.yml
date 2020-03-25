@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ dev ]
   pull_request:
-    branches: [ develop ]
+    branches: [ dev ]
 env:
   IMAGE_NAME: particula-lorawan-listener
 jobs:
