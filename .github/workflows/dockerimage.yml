@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ dev ]
+    branches: [ master, dev ]
   pull_request:
-    branches: [ dev ]
+    branches: [ master, dev ]
 env:
   IMAGE_NAME: particula-lorawan-listener
 jobs:
@@ -14,13 +14,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Branch name
+      id: branchname
+      run: |
+        echo "::set-output name=branch::`echo '${{ github.ref }}' | sed -e 's,.*/\(.*\),\1,'`"
     - uses: actions/checkout@v2
     - uses: whoan/docker-build-with-cache-action@master
       with:
         username: "${{ github.actor }}"
         password: "${{ secrets.GITHUB_TOKEN }}"
         image_name: vives-projectwerk-2-2020/lorawan-listener/particula-lorawan-listener
-        image_tag: develop
+        image_tag: "${{ steps.branchname.outputs.branch }}"
         registry: docker.pkg.github.com
         
   deploy:
