@@ -7,7 +7,6 @@ on:
     branches: [ master, dev ]
 env:
   IMAGE_NAME: particula-lorawan-listener
-  BRANCH_NAME: echo '${{ github.ref }}' | sed -e 's,.*/\(.*\),\1,'
 jobs:
 
   build:
@@ -25,7 +24,7 @@ jobs:
         username: "${{ github.actor }}"
         password: "${{ secrets.GITHUB_TOKEN }}"
         image_name: vives-projectwerk-2-2020/lorawan-listener/particula-lorawan-listener
-        image_tag: "${{ env.BRANCH_NAME }}"
+        image_tag: "${{ steps.branchname.outputs.branch }}"
         registry: docker.pkg.github.com
         
   deploy:
