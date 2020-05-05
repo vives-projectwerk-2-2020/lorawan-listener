@@ -3,10 +3,14 @@
 ![Docker Image CI](https://github.com/vives-projectwerk-2-2020/lorawan-listener/workflows/Docker%20Image%20CI/badge.svg?branch=dev)
 
 ## run program
+```bash
 node .\src\app.js
+```
 
 ## install
+```bash
 npm install
+```
 
 ## .env
 
