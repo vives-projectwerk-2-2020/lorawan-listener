@@ -60,7 +60,24 @@ Received uplink from  lora-rfm95w-maximva
     pm10: 145,
     pm25: 103,
     pressure: 109,
-    temperature: 9
+    temperature: 9,
+    hardwareStatus = {
+      ParticleSensor: {
+        wakeUpSuccessful: 0,
+        sleepSuccessful: 0,
+        readSuccessful:0
+      },
+      TphSensor: {
+        wakeUpSuccessful: 0,
+        readSuccessful: 0
+      },
+      BatteryIndicator: {
+        chargeStatus: 0,
+        chargeComplete: 0,
+        lowBattery: 0,
+        timerTemperatureFault: 0
+      }
+    }
   },
   metadata: {
     time: '2020-02-17T08:06:04.784265573Z',
