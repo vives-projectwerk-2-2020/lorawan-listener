@@ -32,7 +32,16 @@ ttn.data(appID, accessKey)
             humidity: payload.payload_fields.humidity,
             pressure: payload.payload_fields.pressure,
             pm10: payload.payload_fields.pm10,
-            pm25: payload.payload_fields.pm25
+            pm25: payload.payload_fields.pm25,
+            ParticleSensorWakeUpSuccessful: payload.payload_fields.hardwareStatus.ParticleSensor.wakeUpSuccessful,
+            ParticleSensorSleepSuccessful: payload.payload_fields.hardwareStatus.ParticleSensor.sleepSuccessful,
+            ParticleSensorReadSuccessful: payload.payload_fields.hardwareStatus.ParticleSensor.readSuccessful,           
+            TphSensorWakeUpSuccessful: payload.payload_fields.hardwareStatus.TphSensor.wakeUpSuccessful,
+            TphSensorReadSuccessful: payload.payload_fields.hardwareStatus.TphSensor.readSuccessful,
+            BatteryIndicatorChargeStatus: payload.payload_fields.hardwareStatus.BatteryIndicator.chargeStatus,
+            BatteryIndicatorChargeComplete: payload.payload_fields.hardwareStatus.BatteryIndicator.chargeComplete,
+            BatteryIndicatorLowBattery: payload.payload_fields.hardwareStatus.BatteryIndicator.lowBattery,
+            BatteryIndicatorTimerTemperatureFault: payload.payload_fields.hardwareStatus.BatteryIndicator.timerTemperatureFault,
            },
           timestamp: payload.time
         }
